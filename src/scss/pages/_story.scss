@@ -1,0 +1,293 @@
+@use "../global"as *;
+
+.p-story-main {
+  @include yumin;
+  .c-btn__anchor{
+    margin-top: vw(85);
+    @include mq(lg) {
+      margin-top:145px;
+    }
+  }
+}
+
+
+.p-story-main .p-interview-kv{
+  width: 100%;
+  height: vw(1070);
+  background-color:#dee7f4;
+  @include mq(lg) {
+    height:100vh;
+  }
+  &__bg{
+    width: vw(570);
+    height: vw(900);
+    @include mq(lg) {
+      width: vw_lg(700);
+      height: 100%;
+      margin-right: vw_lg(135);
+    }
+  }
+}
+.p-story-main .p-interview-kv__title{
+  top:vw(492);
+  left: vw(45);
+  @include mq(lg) {
+    top:150px;
+    left: vw_lg(132);
+  }
+  &.--prj1{
+    top: vw(374);
+    @include mq(lg) {
+      top:150px;
+    }
+    @media screen and (max-height:800px) and (min-width:960px){
+      top: 100px;
+    }
+  }
+  &.--prj2{
+    top: vw(374);
+    @include mq(lg) {
+      top:150px;
+    }
+    @media screen and (max-height:800px) and (min-width:960px){
+      top: 100px;
+    }
+  }
+}
+.p-story-main .p-interview-kv__title__heading{
+  width: vw(436.7);
+  @include mq(lg) {
+    width: 436.7px;
+  }
+}
+
+.p-story-main .p-interview-kv__sub{
+  bottom: vw(50);
+  @include mq(lg) {
+    top:vh_lg(502);
+    bottom: auto;
+  }
+  &.--3{
+    bottom:vw(34);
+    @include mq(lg) {
+      bottom:auto;
+    }
+  }
+  &.--prj1{
+    @include mq(lg) {
+      top: vh_lg(587);
+      bottom: auto;
+    }
+    @include mq(xl) {
+      // top:vh_lg(502);
+      bottom: auto;
+    }
+  }
+  &.--prj2{
+    bottom: vw(44);
+    @include mq(lg) {
+      // top: auto;
+      // bottom: vw(44);
+      top:vh_lg(522);
+      bottom: auto;
+    }
+    @include mq(xl) {
+      // top:vh_lg(502);
+      top:vh_lg(522);
+      bottom: auto;
+    }
+    .--sp{
+      display: flex;
+      @include mq(lg) {
+        display: none;
+      }
+      .sub-title__box{
+        letter-spacing: 0.09em;
+        &:first-of-type{
+          padding-top: vw(18);
+          padding-bottom: vw(10);
+          @include mq(lg) {
+            padding-top:14px;
+            padding-bottom: 8px;
+          }
+        }
+        &:nth-of-type(2){
+          padding-top: vw(16);
+          padding-bottom: vw(12);
+          margin-top: vw(-2);
+          @include mq(lg) {
+            padding-top: 14px;
+            padding-bottom:10px;
+            margin-top: -4px;
+          }
+        }
+        &:nth-of-type(3){
+          padding-top: vw(14);
+          padding-bottom: vw(12);
+          margin-top: vw(-2);
+          @include mq(lg) {
+            padding-top: 14px;
+            padding-bottom:10px;
+            margin-top: -4px;
+          }
+        }
+        &:nth-of-type(4){
+          padding-top: vw(16);
+          padding-bottom: vw(12);
+          margin-top: vw(-2);
+          @include mq(lg) {
+            padding-top: 13px;
+            padding-bottom:11px;
+            margin-top: -2px;
+          }
+        }
+      }
+    }
+    .--pc{
+      display: none;
+      @include mq(lg) {
+        display: flex;
+      }
+      .sub-title__box{
+        &:first-of-type{
+          @include mq(lg) {
+            padding-top:14px;
+            padding-bottom: 8px;
+          }
+        }
+        &:nth-of-type(2){
+          @include mq(lg) {
+            padding-top: 14px;
+            padding-bottom:10px;
+            margin-top: -4px;
+          }
+        }
+        &:nth-of-type(3){
+          @include mq(lg) {
+            padding-top: 13px;
+            padding-bottom:11px;
+            padding-left:vw_lg(183);
+            margin-top: -2px;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .sub-title__name{
+      margin-top: vw(16);
+      @include mq(lg) {
+        margin-top: vh_lg(17);
+      }
+    }
+  }
+
+  .sub-title__box{
+    padding-right: .5em;
+
+    @include mq(lg) {
+      padding-left:vw_lg(183);
+      font-size:38px;
+      letter-spacing: 0.09em;
+    }
+    &:first-of-type{
+      padding-top: vw(16);
+      padding-bottom: vw(12);
+      @include mq(lg) {
+        padding-top:12px;
+        padding-bottom: 11px;
+      }
+    }
+    &:nth-of-type(2){
+      padding-top: vw(14);
+      padding-bottom: vw(10.5);
+      margin-top: vw(-2);
+      @include mq(lg) {
+        padding-top: 11px;
+        padding-bottom:10px;
+        margin-top: -1px;
+      }
+    }
+    &:nth-of-type(3){
+      padding-top: vw(12);
+      padding-bottom: vw(12);
+      margin-top: vw(-2);
+      @include mq(lg) {
+        padding-top: 11px;
+        padding-bottom:10px;
+        margin-top: -1px;
+      }
+    }
+    span{
+      @include mq(lg) {
+        margin-right:-5px;
+      }
+    }
+  }
+  .sub-title__name{
+    position: relative;
+    display: inline-block;
+    padding-left: vw(115);
+    margin-top: vw(18);
+    margin-left: vw(52);
+    font-size: vw(24);
+    color: $mainBlue;
+    letter-spacing: 0.1em;
+    @include mq(lg) {
+      padding-left: 115px;
+      // margin-top: 17px;
+      margin-top: vh_lg(17);
+      margin-left: vw_lg(183);
+      font-size:24px;
+    }
+    &::before{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: vw(97.5);
+      height: 1px;
+      content: "";
+      background-color: $mainBlue;
+      transform: translateY(-50%);
+      @include mq(lg) {
+        width: 100px;
+      }
+    }
+  }
+
+}
+
+// ---------------------------------
+// コンテンツ部分
+// ---------------------------------
+.p-interview-content.--prj2{
+  margin-top: vw(145);
+  @include mq(lg) {
+    margin-top: 140px;
+  }
+}
+.p-interview-section.story-section-4.interview-section-4{
+  margin-bottom: vw(60);
+  @include mq(lg) {
+    margin-bottom:95px;
+  }
+  h3{
+    text-align: left;
+    @include mq(xl) {
+      text-align: left;
+    }
+  }
+}
+.story-section-5.interview-section-4{
+  margin-top: vw(190);
+  margin-bottom: vw(190);
+  @include mq(lg) {
+    margin-top:95px;
+  }
+  &.--prj2{
+    h3{
+      @include mq(xl) {
+        letter-spacing: 0.03em;
+      }
+    }
+  }
+}

@@ -1,0 +1,226 @@
+@use "sass:math";
+
+// color
+$white:#ffffff;
+$black:#000000;
+$mainBlue:#0000c8;
+$diffYellow:#ffff37;
+$borderLightBlue:#8080ff;
+$lightYellow:#eceec4;
+$lightBlue:#dee7f4;
+$tagGray:#d2d2dc;
+
+$colorBlack:#202020 !default;
+$colorWhite:#fff !default;
+$colorSky:#58bee4 !default;
+$colorLightBlue:#e4f3f9 !default;
+$colorDarkBlue:#275363 !default;
+
+// width/height
+$spInnerPer: 87.24%;
+$pcPerInner:73.2%;// 1000px÷1366px
+$pcOuter:1000px;
+$pcMax:1366px;
+
+// ブレイクポイント
+$breakpoints: (
+  "zero": (min-width: 0),
+  "xs": (min-width: 375px),
+  "s": (min-width: 430px),
+  "sm": (min-width: 520px),
+  "md": (min-width: 768px),
+  "lg": (min-width: 960px),
+  "tab": (min-width: 1024px),
+  "tab-over": (min-width: 1025px),
+  "xl": (min-width: 1366px),
+  "pc-md": (min-width: 1536px),
+  "pc-lg": (min-width: 1920px)) !default;
+
+//pxをvwに変換
+@function vw($size, $viewport: 750) {
+  $rate: math.div(100,$viewport);
+  @return $rate * $size * 1vw;
+}
+@function vw_lg($size, $viewport: 1366) {
+  $rate: math.div(100,$viewport);
+  @return $rate * $size * 1vw;
+}
+@function vh($size, $viewport: 1334) {
+  $rate: math.div(100,$viewport);
+  @return $rate * $size * 1vh;
+}
+@function vh_lg($size, $viewport: 800) {
+  $rate: math.div(100,$viewport);
+  @return $rate * $size * 1vh;
+}
+
+// 画像パス
+$imgDir: "../images/";
+
+// z-indexの管理
+$z-index: (body, slider, slider-on, header, header-on, drawer-and-modal, drawer-and-modal-on);
+
+@function z-index($module) {
+  @return index($z-index, $module);
+}
+
+// イージング
+$easeOutExpo:cubic-bezier(0.16, 1, 0.3, 1);
+$easeOutCirc:cubic-bezier(0, 0.55, 0.45, 1);
+$easeOutCubic:cubic-bezier(0.33, 1, 0.68, 1);
+$easeInCirc:cubic-bezier(0.55, 0, 1, 0.45);
+$easeInOutSine:cubic-bezier(0.37, 0, 0.63, 1);
+$easeInOutCirc:cubic-bezier(0.65, 0, 0.35, 1);
+$easeInOutQuint:cubic-bezier(0.83, 0, 0.17, 1);
+
+// font family
+$yugothic: "Yu Gothic Medium",
+  "游ゴシック Medium",
+  YuGothic,
+  "游ゴシック体",
+  "ヒラギノ角ゴ Pro W3",
+  "メイリオ",
+  sans-serif;
+
+@font-face {
+  font-family: "SortsMillGoudy";
+  src: url("../fonts/SortsMillGoudy.woff2") format("woff2"),
+    url("../fonts/SortsMillGoudy.woff") format("woff"),
+    url("../fonts/SortsMillGoudy.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMonoRegular";
+  src: local("Roboto Mono Regular"),
+    url("../fonts/RobotoMonoRegular.woff2") format("woff2"),
+    url("../fonts/RobotoMonoRegular.woff") format("woff"),
+    url("../fonts/RobotoMonoRegular.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "RobotoMonoSemiBold";
+  src: local("Roboto Mono SemiBold"),
+    url("../fonts/RobotoMonoSemiBold.woff2") format("woff2"),
+    url("../fonts/RobotoMonoSemiBold.woff") format("woff"),
+    url("../fonts/RobotoMonoSemiBold.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "RobotoMonoRegularHash";
+  src: local("Roboto Mono Regular"),
+    url("../fonts/RobotoMonoR.woff2") format("woff2"),
+    url("../fonts/RobotoMonoR.woff") format("woff"),
+    url("../fonts/RobotoMonoR.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "RobotoMonoLight";
+  src: local("Roboto Mono Light"),
+    url("../fonts/RobotoMonoLight.woff2") format("woff2"),
+    url("../fonts/RobotoMonoLight.woff") format("woff"),
+    url("../fonts/RobotoMonoLight.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMonoLightItalic";
+  font-style: italic;
+  font-weight: 300;
+  src: local("Roboto Mono Light Italic"),
+    url("../fonts/RobotoMonoLightItalic.woff2") format("woff2"),
+    url("../fonts/RobotoMonoLightItalic.woff") format("woff"),
+    url("../fonts/RobotoMonoLightItalic.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "koburinaW3";
+  font-weight: normal;
+  src: url("../fonts/koburinaW3.woff2") format("woff2"),
+    url("../fonts/koburinaW3.woff") format("woff"),
+    url("../fonts/koburinaW3.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "koburinaW6";
+  font-weight: normal;
+  src: url("../fonts/koburinaW6.woff2") format("woff2"),
+    url("../fonts/koburinaW6.woff") format("woff"),
+    url("../fonts/koburinaW6.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "mainichiMincho";
+  font-weight: normal;
+  src: url("../fonts/MNews.woff2") format("woff2"),
+    url("../fonts/MNews.woff") format("woff"),
+    url("../fonts/MNews.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bodoni";
+  font-weight: normal;
+  src:
+    url("../fonts/Bodoni.woff2") format("woff2"),
+    url("../fonts/Bodoni.woff") format("woff"),
+    url("../fonts/Bodoni.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "BodoniItalic";
+  font-style: italic;
+  font-weight: normal;
+  src:
+    url("../fonts/BodoniItalic.woff2") format("woff2"),
+    url("../fonts/BodoniItalic.woff") format("woff"),
+    url("../fonts/BodoniItalic.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "BodoniItalicPlus";
+  font-style: italic;
+  font-weight: normal;
+  src:
+    url("../fonts/BodoniItalicPlus.woff2") format("woff2"),
+    url("../fonts/BodoniItalicPlus.woff") format("woff"),
+    url("../fonts/BodoniItalicPlus.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "ITC";
+  font-weight: normal;
+  src:
+    url("../fonts/ITC.woff2") format("woff2"),
+    url("../fonts/ITC.woff") format("woff"),
+    url("../fonts/ITC.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir";
+  font-weight: normal;
+  src:
+    url("../fonts/Avenir.woff2") format("woff2"),
+    url("../fonts/Avenir.woff") format("woff"),
+    url("../fonts/Avenir.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "gotham";
+  font-weight: normal;
+  src:
+    url("../fonts/gotham.woff2") format("woff2"),
+    url("../fonts/gotham.woff") format("woff"),
+    url("../fonts/gotham.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "aotfGothicMedium";
+  font-weight: normal;
+  src:
+    url("../fonts/aotfGothicMedium.woff2") format("woff2"),
+    url("../fonts/aotfGothicMedium.woff") format("woff"),
+    url("../fonts/aotfGothicMedium.otf") format("opentype");
+  font-display: swap;
+}

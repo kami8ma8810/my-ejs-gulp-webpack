@@ -1,0 +1,178 @@
+@use "../global"as *;
+
+.c-show-box {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    content: "";
+    background-color: $mainBlue;
+    opacity: 0;
+  }
+  &.is-show {
+    &::after {
+      opacity: 1;
+
+      @include animation(
+        $name: showUpBox,
+        $duration: .8s,
+        $timing-function: $easeInOutQuint
+      );
+    }
+  }
+
+}
+
+.c-show-box__inner {
+  opacity: 0;
+  .is-show & {
+    opacity: 1;
+    @include animation(
+      $name: showUpText,
+      $duration: .8s,
+      $timing-function: $easeInOutQuint,
+      $fill-mode: none
+    );
+  }
+
+}
+
+.c-show-box-remain {
+  position: relative;
+  width: 0;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    content: "";
+    background-color: $mainBlue;
+    opacity: 0;
+  }
+  &.is-show {
+    @include animation(
+      $name: showUpBoxBg,
+      $duration: .8s,
+      $timing-function: $easeInOutQuint);
+
+    &::after {
+      opacity: 1;
+
+      @include animation(
+        $name: showUpBoxRemain,
+        $duration: .8s,
+        $timing-function: $easeInOutQuint
+      );
+    }
+    .c-show-box-remain__inner{
+      @include animation(
+        $name: showUpTextRemain,
+        $duration: .8s,
+        $timing-function: $easeInOutQuint,
+        $fill-mode: forwards
+      );
+    }
+  }
+}
+
+.c-show-box-remain__inner {
+  opacity: 0;
+}
+
+
+@keyframes showUpBox {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+@keyframes showUpText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes showUpBoxBg {
+  0% {
+    width: 0;
+    background-color: transparent;
+  }
+  50%{
+    width: 100%;
+    background-color: transparent;
+  }
+  50.1%{
+    width: 100%;
+    background-color: $mainBlue;
+  }
+  100% {
+    width: 100%;
+    background-color: $mainBlue;
+  }
+}
+@keyframes showUpBoxRemain {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+@keyframes showUpTextRemain {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,68 @@
+@use "../global"as *;
+
+//ローディング部分の回転エフェクト定義
+@-moz-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+//ローディング画面の背景部分
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+//ローディング回転部分
+#loading-main:after, #loading-main:before {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-left: -50%;
+  content: "";
+  border-radius: 110%; }
+
+#loading-main {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  z-index: 105;
+  display: block;
+  width: 30px;
+  height: 30px;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+#loading-main:after {
+  border: 2px solid transparent;
+  border-top-color: $mainBlue;
+  -moz-animation: loading 0.75s linear infinite;
+  -webkit-animation: loading 0.75s linear infinite;
+  animation: loading 0.75s linear infinite; }
+#loading-main:before {
+  border: 2px solid rgba(51, 51, 51, 0.15); }

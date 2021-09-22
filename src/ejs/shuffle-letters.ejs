@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shuffle-letters DEMO</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Noto Sans JP';
+      }
+      .title-wrap {
+        width: 100%;
+        height: 50vh;
+        background-color: lightcoral;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .title {
+        margin: 0;
+        font-size: 40px;
+        text-align: center;
+      }
+      .text-wrap {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100vh;
+      }
+			.demo1,.demo2{
+				line-height: 2;
+				font-size: 18px;
+			}
+      .text {
+        margin-bottom: 100vh;
+      }
+      .text__inner {
+        /* background-color: lightcoral; */
+        font-size: 40px;
+        opacity: 0;
+        line-height: 1.8;
+        padding: 20px 0;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        color: crimson;
+      }
+      .text__inner.is-show {
+        opacity: 1;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section class="title-wrap">
+      <h1 class="title">shuffle-letters DEMO</h1>
+    </section>
+    <section class="text-wrap">
+      <h2>公式サイトのデモ（JavaScriptに書いたテキストを表示）</h2>
+      <p class="demo1"></p>
+      <p class="demo1"></p>
+      <p class="demo1"></p>
+
+
+      <h2>公式サイトのデモ（HTMLに書いたテキストを表示 hidden属性を使用）</h2>
+      <p class="demo2" hidden>男女男男女男女</p>
+      <p class="demo2" hidden>男女男男女男女男女男男女男女男女男男女男女</p>
+      <p class="demo2" hidden>男女男男女男女男女男男女男女</p>
+      <p class="demo2" hidden>男女男男女男女男女男男女男女男女男男女男女男女男男女男女男女男男女男女男女男男女男女</p>
+      <p class="demo2" hidden>男女男男女男女男女男男女男女男女男男女男女男女男男女男女</p>
+    </section>
+    <section class="text-wrap js-observe">
+      <h2>スクロールするとシャッフルしながら表示されます。</h2>
+      <p class="text">
+        <span class="text__inner js-shuffleText"
+          >人間！つまずくのは恥ずかしいことじゃない！立ち上がらない事が…恥ずかしいんだぞ！</span
+        >
+      </p>
+      <p class="text">
+        <span class="text__inner js-shuffleText"
+          >すべて人のせいにする！その考え方がいかん！だからいつまでも成長しない</span
+        >
+      </p>
+      <p class="text">
+        <span class="text__inner js-shuffleText"
+          >人生は人生ゲームだ！何がおこるかわからんから面白い！</span
+        >
+      </p>
+      <p class="text">
+        <span class="text__inner js-shuffleText"
+          >技術を悪用すれば犯罪になるし正しく使えば感謝されるのだ</span
+        >
+      </p>
+      <p class="text">
+        <span class="text__inner js-shuffleText"
+          >はずかしいだのてれるなんてのは自意識過剰で自己顕示が強いんですよ！自分をよく見せようと思っちゃダメ！！</span
+        >
+      </p>
+    </section>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.2/es6-promise.min.js"></script> -->
+    <script src="./js/shuffle-letters.js"></script>
+    <script>
+      ('use strict');
+      const textTarget = document.querySelectorAll('.demo1');
+			shuffleLetters(textTarget,{
+				text:'ShuffleシャッフルしゃっふるShuffleシャッフルしゃっふるShuffleシャッフルしゃっふるShuffleシャッフルしゃっふる'
+			});
+
+      let textTargetHidden = document.querySelectorAll('.demo2');
+      for (let i = 0; i < textTargetHidden.length; i++) {
+        textTargetHidden[i].hidden = false;
+      }
+      shuffleLetters(textTargetHidden, {
+        // option
+        step: 5,//どのくらいの文字数を先にシャッフルさせるか
+        fps: 10,//スピード
+      });
+
+      const targets = document.querySelectorAll('.js-shuffleText');
+      if (targets !== null) {
+        shuffleShowScroll();
+      }
+      function shuffleShowScroll() {
+        function doWhenTargetObserve(entries, observerStop) {
+          entries.forEach((entry) => {
+            // 監視範囲にないときは何もしない
+            if (!entry.isIntersecting) {
+              return;
+            }
+            // 監視範囲と交差したときの処理
+            // const targetText = entry.target.textContent;
+            shuffleLetters(entry.target, {
+              // text: targetText,
+              step: 10,
+              fps: 60,
+            });
+            // const targetText = entry.target.textContent;
+            // shuffleLetters(entry.target, {
+            //   text: targetText,
+            //   step: 10,
+            //   fps: 60,
+            // });
+            entry.target.classList.add('is-show');
+            //一度処理したら監視をやめる
+            observerStop.unobserve(entry.target);
+          });
+        }
+        // 監視範囲
+        const options = {
+          root: null,
+          rootMargin: '-10% 0%',
+          threshold: 1,
+        };
+        const observer = new IntersectionObserver(doWhenTargetObserve, options);
+
+        // ターゲットを監視
+        targets.forEach((target) => {
+          observer.observe(target);
+        });
+      }
+    </script>
+  </body>
+</html>

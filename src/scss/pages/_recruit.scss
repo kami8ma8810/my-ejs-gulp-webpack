@@ -1,0 +1,442 @@
+@use "../global"as *;
+
+
+.p-recruit-content{
+  max-width: 1000px;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.p-recruit-text{
+  width: 100%;
+  margin-top: vw(135);
+  font-weight: 600;
+  text-align: center;
+  @include yumin;
+  @include mq(lg) {
+    margin-top:120px;
+  }
+  .title{
+    font-size: vw(34);
+    line-height: 2.1;
+    color: $mainBlue;
+    @include mq(lg) {
+      font-size:30px;
+      line-height: 1.8;
+      .is-sp{
+        display: none;
+      }
+    }
+  }
+  .desc{
+    margin-top: vw(70);
+    font-size: vw(26);
+    line-height: 1.95;
+    .is-pc{
+      display: none;
+    }
+    @include mq(lg) {
+      margin-top: 30px;
+      font-size:16px;
+      .is-sp{
+        display: none;
+      }
+      .is-pc{
+        display: block;
+      }
+    }
+  }
+}
+.p-recruit-list{
+  width: vw(650);
+  margin-top: vw(145) ;
+  margin-right:auto;
+  margin-left:auto;
+  @include mq(lg) {
+    width: 800px;
+    margin-top:140px;
+  }
+}
+.p-recruit-items{
+  width: 100%;
+  @include yugo;
+  @include mq(lg) {
+    border-width:0;
+  }
+}
+.p-recruit-item{
+  width: 100%;
+  padding: vw(50) 0;
+  &.__bosyu{
+    padding-bottom: vw(25);
+    @include mq(lg) {
+      padding-bottom: 0;
+    }
+  }
+  @include mq(lg) {
+    padding: 0;
+  }
+  &+.p-recruit-item{
+    // border-top: 1px solid $mainBlue;
+    @include mq(lg) {
+      border-width:0;
+    }
+  }
+  &__title{
+    width: 100%;
+    padding: .65em 0;
+    font-size: vw(30);
+    font-weight: 700;
+    color: $mainBlue;
+    border-top: 1px solid $mainBlue;
+    border-bottom: 1px solid $mainBlue;
+    @include mq(lg) {
+      padding: .7em 0;
+      margin-right: 40px;
+      font-size: 21px;
+    }
+    .__jouken & {
+      letter-spacing: .05em;
+    }
+  }
+  dt.sougou{
+    margin-top: vw(50);
+    font-size: vw(34);
+    @include mq(lg) {
+      margin-top: 20px;
+      font-size: 28px;
+      letter-spacing: 0.05em;
+    }
+  }
+  dd.sougou{
+    margin-top: vw(12);
+    font-size: vw(26);
+    font-feature-settings: "palt";
+    line-height: 1.6;
+    @include mq(lg) {
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+    }
+  }
+  &__content{
+    width: 100%;
+    margin-top: vw(40);
+    font-size: vw(26);
+    font-weight: normal;
+    @include mq(lg) {
+      padding: 16px 0 95px;
+      margin-top: 0;
+      font-size:16px;
+    }
+    p{
+      line-height: 1.65;
+      @include mq(lg) {
+        line-height:1.7
+      }
+    }
+
+    &.__bosyu{
+      margin-top: vw(48);
+      @include mq(lg) {
+        width: 665px;
+        margin-top: 0px;
+        margin-right:auto;
+        margin-left:auto;
+      }
+
+      .bosyu-job{
+        margin-top: vw(90);
+        @include mq(lg) {
+          margin-top: 25px;
+        }
+        &__title{
+          margin-top: vw(30);
+          font-size: vw(34);
+          font-feature-settings: "palt";
+          @include mq(lg) {
+            margin-top: 0px;
+            font-size: 28px;
+          }
+          &.--blue{
+            margin-bottom: vw(35);
+            font-size: vw(30);
+            color: $mainBlue;
+            text-align: center;
+            letter-spacing: 0.05em;
+            @include mq(lg) {
+              margin-bottom: 20px;
+              font-size: 20px;
+            }
+          }
+        }
+        &__figure{
+          display: block;
+          width: 100%;
+          margin-top: vw(30);
+          margin-bottom: vw(100);
+          @include mq(lg) {
+            margin-top: 20px;
+            margin-bottom: 57px;
+          }
+        }
+      }
+      .bosyu-job__item{
+        display: flex;
+        width: 100%;
+        height: vw(160);
+        font-feature-settings: "palt";
+        @include mq(lg) {
+          height: 76px;
+        }
+
+        & + .bosyu-job__item{
+          margin-top: vw(15);
+          @include mq(lg) {
+            margin-top: 10px;
+          }
+        }
+        dt{
+          display: flex;
+          flex:0 0 auto;
+          align-items: center;
+          justify-content: center;
+          width: vw(225);
+          font-size: vw(30);
+          font-weight: bold;
+          line-height: 1.5;
+          color: $mainBlue;
+          text-align: center;
+          text-justify:inter-ideograph;
+          white-space: nowrap;
+          background-color: #d2daeb;
+          @include yugo;
+          @include mq(lg) {
+            width: 205px;
+            font-size: 18px;
+            br{
+              display: none;
+            }
+          }
+
+          .small{
+            display: block;
+            font-size: vw(26);
+            @include mq(lg) {
+              font-size: 14px;
+            }
+          }
+        }
+        dd{
+          @include yugo;
+          display: flex;
+          flex: 1 1 auto;
+          align-items: center;
+          padding: 0 1em;
+          font-size: vw(26);
+          line-height: 1.45;
+          text-align:justify;
+          text-justify:inter-ideograph;
+          background-color: #f2f5fb;
+          @include mq(lg) {
+            padding: 0 2.2em;
+            font-size: 16px;
+            line-height: 1.6;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+      .bosyu-job__note{
+        width: 100%;
+        margin-top: vw(25);
+        margin-bottom: vw(10);
+        font-size: vw(18);
+        text-align: right;
+        transform: scale(0.9) translateX(1em);
+        transform-origin: right center;
+        @include mq(lg) {
+          margin-top: 25px;
+          margin-bottom: 0;
+          font-size: 14px;
+          transform: none;
+        }
+      }
+    }
+  }
+
+  &.__jouken{
+    padding-bottom: vw(40);
+    @include mq(lg) {
+      padding-bottom: 0;
+      .p-recruit-item__content{
+        padding-bottom: 103px;
+      }
+    }
+    dl{
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+      font-weight: bold;
+      line-height: 1.7;
+      & + dl{
+        margin-top: vw(12.5);
+        @include mq(lg) {
+          margin-top:8px;
+        }
+      }
+
+    }
+    dt{
+      display: flex;
+      flex: 0 0 auto;
+      justify-content: space-between;
+      width: 23.4%;
+      margin-right:3%;
+      color: $mainBlue;
+      text-align-last: justify;
+      text-justify: inter-ideograph;
+      // letter-spacing: .1em;
+      span.--spacing{
+        letter-spacing: -1.5em;
+        @include mq(lg) {
+          letter-spacing: -1.3em;
+        }
+      }
+      &.--left{
+        font-feature-settings: "palt";
+        @include mq(lg) {
+          line-height: 1.15;
+          letter-spacing: -1.1em;
+        }
+        span{
+          display: block;
+          letter-spacing: -1em;
+          @include mq(lg) {
+            letter-spacing: -4.6em;
+          }
+        }
+      }
+      @include mq(lg) {
+        width:75px;
+        margin-right:18px;
+      }
+      &.holiday{
+        font-feature-settings: "palt";
+        letter-spacing: -0.1em;
+      }
+      &.--column{
+        flex-direction: column;
+        .--flex{
+          display: flex;
+          justify-content: space-between;
+          &.--left{
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+    dd{
+      flex: 0 1 auto ;
+      font-feature-settings: "palt";
+      letter-spacing: .05em;
+      &.holiday{
+        font-feature-settings: "palt";
+        letter-spacing:0.05em;
+      }
+
+      // span.--wide{
+      //   letter-spacing: .15em;
+      //   @include mq(lg) {
+      //     letter-spacing: .08em;
+      //   }
+      // }
+    }
+    .fukuri-items{
+      padding-left: 1em;
+    }
+    .fukuri-item{
+      position: relative;
+      font-feature-settings: "palt";
+      @include mq(lg) {
+        line-height: 1.9;
+        letter-spacing:0.05em;
+      }
+      &::before{
+        position: absolute;
+        top: .4em;
+        left: -1em;
+        display: block;
+        width: vw(22);
+        height: vw(22);
+        content: "";
+        background-color:#666666 ;
+        border-radius: 50%;
+        @include mq(lg) {
+          width:15px;
+          height:15px;
+        }
+      }
+    }
+    &.__syain{
+      padding-bottom: vw(55);
+      @include mq(lg) {
+        padding-bottom: 0;
+        .p-recruit-item__content{
+          padding-bottom: 95px;
+        }
+      }
+      .p-recruit-item__title{
+        font-feature-settings: "palt";
+      }
+      dt{
+        width: 35%;
+        font-feature-settings: "palt";
+        white-space: nowrap;
+        @include mq(lg) {
+          width: 147px;
+          margin-right: 16px;
+        }
+      }
+      dd{
+        font-feature-settings: "palt";
+        &.--height{
+          line-height: 1.65;
+          @include mq(lg) {
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+  &.__etc{
+    padding-top: vw(40);
+    .p-recruit-item__title{
+      font-feature-settings: "palt";
+      letter-spacing: 0.05em;
+    }
+    @include mq(lg) {
+      padding-top: 0;
+    }
+    .etc-text{
+      font-feature-settings: "palt";
+      letter-spacing: 0.05em;
+    }
+  }
+  &:last-of-type{
+    .p-recruit-item__content{
+      @include mq(lg) {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+.recruit-main{
+  .c-btn__anchor{
+    margin-top: vw(145);
+    @include mq(xl) {
+      margin-top: 157px
+    }
+  }
+}

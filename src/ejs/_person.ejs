@@ -1,0 +1,963 @@
+<main class="main person-main parallax-container" data-scroll-section>
+  <div class="c-kvHalf">
+    <div class="c-kvHalf__text">
+      <h1 class="c-kvHalf__title">
+        <span class="c-kvHalf__yumin">エムスリーの人</span>
+      </h1>
+      <section class="c-kvHalf__title__bottom --person js-startLoaded">
+        <div class="c-kvHalf__number"><span>02</span></div>
+        <h1 class="c-kvHalf__en">
+          <img
+            src="<%= meta.imgPath %>text-person-kv.svg"
+            alt="PERSON"
+            width="685"
+            height="auto"
+          />
+        </h1>
+      </section>
+    </div>
+
+    <div class="c-kvHalf__bg c-kvBgFade">
+			<div class="c-kvBgFade__img js-startLoaded">
+				<picture>
+					<source
+						media="(min-width: 960px)"
+						srcset="<%= meta.imgPath %>bg-person-kv-pc.jpg"
+					/>
+					<img
+						src="<%= meta.imgPath %>bg-person-kv.jpg"
+						alt=""
+						width="1366"
+						height="auto"
+					/>
+				</picture>
+			</div>
+    </div>
+  </div>
+
+  <div class="p-person-content filter-container" id="js-filterTag">
+    <!-- タグソート部分 -->
+    <div class="p-person-tag-container">
+      <div class="p-person-tag-inner">
+        <div class="tag-side"></div>
+        <div class="tag-content"></div>
+        <div class="tag-side"></div>
+      </div>
+
+      <div class="p-person-tag-inner">
+        <div class="tag-side">
+          <div class="tag-side__select">
+            <span
+              ><img
+                src="<%= meta.imgPath %>text-person-select.svg"
+                alt="please select"
+                width="15"
+                height="auto"
+            /></span>
+          </div>
+        </div>
+        <section class="tag-content">
+          <input
+            type="radio"
+            id="cat-all"
+            name="categories"
+            value="cat-all"
+						class="cat0"
+            checked
+          />
+          <input
+            type="radio"
+            id="cat-1"
+            name="categories"
+            value="cat-1"
+            class="cat1"
+          />
+          <input
+            type="radio"
+            id="cat-2"
+            name="categories"
+            value="cat-2"
+            class="cat2"
+          />
+          <input
+            type="radio"
+            id="cat-3"
+            name="categories"
+            value="cat-3"
+            class="cat3"
+          />
+          <input
+            type="radio"
+            id="cat-4"
+            name="categories"
+            value="cat-4"
+            class="cat4"
+          />
+          <input
+            type="radio"
+            id="cat-5"
+            name="categories"
+            value="cat-5"
+            class="cat5"
+          />
+          <input
+            type="radio"
+            id="cat-6"
+            name="categories"
+            value="cat-6"
+            class="cat6"
+          />
+          <input
+            type="radio"
+            id="cat-7"
+            name="categories"
+            value="cat-7"
+            class="cat7"
+          />
+          <input
+            type="radio"
+            id="cat-8"
+            name="categories"
+            value="cat-8"
+            class="cat8"
+          />
+          <input
+            type="radio"
+            id="cat-9"
+            name="categories"
+            value="cat-9"
+            class="cat9"
+          />
+          <input
+            type="radio"
+            id="cat-10"
+            name="categories"
+            value="cat-10"
+            class="cat10"
+          />
+          <input
+            type="radio"
+            id="cat-11"
+            name="categories"
+            value="cat-11"
+            class="cat11"
+          />
+          <input
+            type="radio"
+            id="cat-12"
+            name="categories"
+            value="cat-12"
+            class="cat12"
+          />
+          <input
+            type="radio"
+            id="cat-13"
+            name="categories"
+            value="cat-13"
+            class="cat13"
+          />
+          <input
+            type="radio"
+            id="cat-14"
+            name="categories"
+            value="cat-14"
+            class="cat14"
+          />
+          <input
+            type="radio"
+            id="cat-15"
+            name="categories"
+            value="cat-15"
+            class="cat15"
+          />
+          <input
+            type="radio"
+            id="cat-16"
+            name="categories"
+            value="cat-16"
+            class="cat16"
+          />
+          <input
+            type="radio"
+            id="cat-17"
+            name="categories"
+            value="cat-17"
+            class="cat17"
+          />
+          <input
+            type="radio"
+            id="cat-18"
+            name="categories"
+            value="cat-18"
+            class="cat18"
+          />
+          <input
+            type="radio"
+            id="cat-19"
+            name="categories"
+            value="cat-19"
+            class="cat19"
+          />
+          <input
+            type="radio"
+            id="cat-20"
+            name="categories"
+            value="cat-20"
+            class="cat20"
+          />
+          <input
+            type="radio"
+            id="cat-21"
+            name="categories"
+            value="cat-21"
+            class="cat21"
+          />
+          <ul class="topics-items filters">
+            <li class="topics-item __all">
+              <h3><label for="cat-all">#ALL</label></h3>
+            </li>
+            <li class="topics-item --spacing">
+              <h3><label for="cat-1">#プロジェクトストーリー</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-2">#座談会</label></h3>
+            </li>
+            <li class="topics-item --spacing">
+              <h3><label for="cat-3">#インタビュー</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-4">#新卒入社</label></h3>
+            </li>
+						<li class="topics-item">
+              <h3><label for="cat-5">#新規事業</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-6">#中途入社</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-7">#経営人材</label></h3>
+            </li>
+						<li class="topics-item">
+              <h3><label for="cat-8">#M&A</label></h3>
+            </li>
+						<li class="topics-item --spacing">
+							<h3><label for="cat-9">#グローバル</label></h3>
+						</li>
+            <li class="topics-item">
+              <h3><label for="cat-10">#DX</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-11">#AI</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-12">#COVID-19</label></h3>
+            </li>
+						<li class="topics-item">
+              <h3><label for="cat-13">#執行役員</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-14">#投資銀行</label></h3>
+            </li>
+						<li class="topics-item">
+              <h3><label for="cat-15">#20代の成長環境</label></h3>
+            </li>
+						<li class="topics-item --spacing">
+              <h3><label for="cat-16">#マッキンゼー</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-17">#総合商社</label></h3>
+            </li>
+						<li class="topics-item">
+              <h3><label for="cat-18">#BCG</label></h3>
+            </li>
+						<li class="topics-item --spacing">
+              <h3><label for="cat-19">#メガベンチャー</label></h3>
+            </li>
+            <li class="topics-item --spacing">
+              <h3><label for="cat-20">#コンサル</label></h3>
+            </li>
+            <li class="topics-item">
+              <h3><label for="cat-21">#業務執行役員</label></h3>
+            </li>
+						<div id="js-tagScrollTop"></div>
+          </ul>
+        </section>
+        <div class="tag-side"></div>
+      </div>
+
+      <div class="p-person-tag-inner">
+        <div class="tag-side">
+          <div class="tag-side__pickup">
+            <span
+              ><img
+                src="<%= meta.imgPath %>text-person-pickup.svg"
+                alt="pick up"
+                width="20"
+                height="auto"
+            /></span>
+          </div>
+        </div>
+        <div class="tag-content" id="js-tagContent">
+          <div class="tag-active">
+            <ul class="targets">
+              <li class="js-filterTarget" data-category="cat-all">#ALL</li>
+              <li class="js-filterTarget js-pickup --spacing" data-category="cat-1">#プロジェクトストーリー</li>
+              <li class="js-filterTarget js-pickup" data-category="cat-2">
+                #座談会
+              </li>
+              <li class="js-filterTarget js-pickup --spacing"
+                data-category="cat-3"
+              >#インタビュー
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-4">
+                #新卒入社
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-5">
+                #新規事業
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-6">
+                #中途入社
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-7">
+                #経営人材
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-8">
+                #M&A
+              </li>
+              <li
+                class="js-filterTarget js-pickup --spacing"
+                data-category="cat-9"
+              >
+                #グローバル
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-10">
+                #DX
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-11">
+                #AI
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-12">
+                #COVID-19
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-13">
+                #執行役員
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-14">
+                #投資銀行
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-15">
+                #20代の成長環境
+              </li>
+              <li
+                class="js-filterTarget js-pickup --spacing"
+                data-category="cat-16"
+              >
+                #マッキンゼー
+              </li>
+              <li class="js-filterTarget js-pickup" data-category="cat-17">
+                #総合商社
+              </li>
+							<li class="js-filterTarget js-pickup" data-category="cat-18">
+								#BCG
+							</li>
+              <li
+                class="js-filterTarget js-pickup --spacing"
+                data-category="cat-19"
+              >
+                #メガベンチャー
+              </li>
+              <li
+                class="js-filterTarget js-pickup --spacing"
+                data-category="cat-20"
+              >
+                #コンサル
+              </li>
+              <li
+                class="js-filterTarget js-pickup"
+                data-category="cat-21"
+              >#業務執行役員</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tag-side"></div>
+      </div>
+    </div>
+    <!-- タグソート部分 -->
+
+    <!-- インタビュー部分 -->
+    <div class="p-person-interview">
+      <ul class="interview-items targets">
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-3 cat-4 cat-5 cat-7"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/001.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="
+                  background-image: url(<%= meta.imgPath %>img-interview-item1.jpg);
+                "
+              ></div>
+              <span class="interview-item__bg__heading">
+                <img
+                  src="<%= meta.imgPath %>text-person-interview.svg"
+                  alt="INTERVIEW"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/001.html"
+                  >経営陣から直接学ぶ。<br />最短距離で経営人材になるために。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">織井彩乃 2018年新卒入社</p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/001.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-4">
+                  <h3>#新卒入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-3">
+                  <h3>#インタビュー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-7">
+                  <h3>#経営人材</h3>
+                </li>
+                <li class="article-tag" data-category="cat-5">
+                  <h3>#新規事業</h3>
+                </li>
+              </ul>
+            </section>
+          </article>
+        </li>
+
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-3 cat-4 cat-7 cat-8"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/002.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="
+                  background-image: url(<%= meta.imgPath %>img-interview-item2.jpg);
+                "
+              ></div>
+              <span class="interview-item__bg__heading">
+                <img
+                  src="<%= meta.imgPath %>text-person-interview.svg"
+                  alt="INTERVIEW"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/002.html"
+                  >10年も待っていられない。<br />最速で専門分野を極め、唯一無二の存在へ。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">榊原和洋 2020年新卒入社</p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/002.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-4">
+                  <h3>#新卒入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-3">
+                  <h3>#インタビュー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-8"><h3>#M&A</h3></li>
+                <li class="article-tag" data-category="cat-7"><h3>#経営人材</h3></li>
+              </ul>
+            </section>
+          </article>
+        </li>
+
+				<!-- 高野 -->
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-3 cat-6 cat-7 cat-15 cat-18 cat-20"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/003.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="
+                  background-image: url(<%= meta.imgPath %>img-interview-item3.jpg);
+                "
+              ></div>
+              <span class="interview-item__bg__heading">
+                <img
+                  src="<%= meta.imgPath %>text-person-interview.svg"
+                  alt="INTERVIEW"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/003.html"
+                  >転職者の私が30代で手にした経験を、20代で掴んでほしい。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">高野雄治 2016年中途入社</p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/003.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-6">
+                  <h3>#中途入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-3">
+                  <h3>#インタビュー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-18">
+                  <h3>#BCG</h3>
+                </li>
+                <li class="article-tag" data-category="cat-7">
+                  <h3>#経営人材</h3>
+                </li>
+                <li class="article-tag" data-category="cat-15">
+                  <h3>#20代の成長環境</h3>
+                </li>
+                <li class="article-tag" data-category="cat-20">
+                  <h3>#コンサル</h3>
+                </li>
+              </ul>
+            </section>
+          </article>
+        </li>
+
+        <!-- 片山 -->
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-3 cat-6 cat-7 cat-16 cat-20 cat-21"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/004.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="
+                  background-image: url(<%= meta.imgPath %>img-interview-item4.jpg);
+                "
+              ></div>
+              <span class="interview-item__bg__heading">
+                <img
+                  src="<%= meta.imgPath %>text-person-interview.svg"
+                  alt="INTERVIEW"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/004.html"
+                  >経営人材を目指す人にとって、エムスリーは最高の環境。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">片山洋一 2017年中途入社</p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/004.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-6">
+                  <h3>#中途入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-3">
+                  <h3>#インタビュー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-16">
+                  <h3>#マッキンゼー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-21">
+                  <h3>#業務執行役員</h3>
+                </li>
+                <li class="article-tag" data-category="cat-7">
+                  <h3>#経営人材</h3>
+                </li>
+                <li class="article-tag" data-category="cat-20">
+									<h3>#コンサル</h3></li>
+              </ul>
+            </section>
+          </article>
+        </li>
+        <!-- //片山 -->
+
+        <!-- 金色 -->
+        <li class="c-show-box interview-item js-filterTarget"
+          data-category="cat-3 cat-6 cat-7 cat-8 cat-14 cat-16 cat-20 cat-21"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/005.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="
+                  background-image: url(<%= meta.imgPath %>img-interview-item5.jpg);
+                "
+              ></div>
+              <span class="interview-item__bg__heading">
+                <img
+                  src="<%= meta.imgPath %>text-person-interview.svg"
+                  alt="INTERVIEW"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/005.html"
+                  >コンサルタントの市場価値がコモディティ化した今、ユニークな存在でありつづけるために。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">金色一賢 2014年中途入社</p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/005.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-6">
+                  <h3>#中途入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-3">
+                  <h3>#インタビュー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-16">
+                  <h3>#マッキンゼー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-14">
+                  <h3>#投資銀行</h3>
+                </li>
+                <li class="article-tag" data-category="cat-8">
+									<h3>#M&A</h3>
+								</li>
+                <li class="article-tag" data-category="cat-7">
+									<h3>#経営人材</h3>
+								</li>
+                <li class="article-tag" data-category="cat-20">
+									<h3>#コンサル</h3>
+								</li>
+                <li class="article-tag" data-category="cat-21">
+									<h3>#業務執行役員</h3>
+								</li>
+              </ul>
+            </section>
+          </article>
+        </li>
+        <!-- //金色 -->
+
+        <!-- 久野 -->
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-3 cat-4 cat-7 cat-9 cat-15"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/006.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="
+                  background-image: url(<%= meta.imgPath %>img-interview-item6.jpg);
+                "
+              ></div>
+              <span class="interview-item__bg__heading">
+                <img
+                  src="<%= meta.imgPath %>text-person-interview.svg"
+                  alt="INTERVIEW"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/006.html"
+                  >判断基準は、20代で圧倒的な成長を実現できる環境かどうか。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">久野哲 2018年新卒入社</p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/006.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-4">
+                  <h3>#新卒入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-3">
+                  <h3>#インタビュー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-9">
+                  <h3>#グローバル</h3>
+                </li>
+								<li class="article-tag" data-category="cat-7">
+									<h3>#経営人材</h3>
+								</li>
+                <li class="article-tag" data-category="cat-15">
+                  <h3>#20代の成長環境</h3>
+              </ul>
+            </section>
+          </article>
+        </li>
+        <!-- //久野 -->
+
+        <!-- 尾崎 -->
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-1 cat-5 cat-6 cat-10 cat-20"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/prj001.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="background-image: url(<%= meta.imgPath %>img-interview-item7.jpg)"
+              ></div>
+              <span class="interview-item__bg__heading --project">
+                <img
+                  src="<%= meta.imgPath %>text-person-projectstory.svg"
+                  alt="PROJECT STORY"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/prj001.html"
+                  >圧倒的なスピード感で、<br />医療のDX化を実現する。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">尾崎郁雄 2014年中途入社</p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/prj001.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-6">
+                  <h3>#中途入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-1">
+                  <h3>#プロジェクトストーリー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-5">
+                  <h3>#新規事業</h3>
+                </li>
+                <li class="article-tag" data-category="cat-10">
+									<h3>#DX</h3></li>
+                <li class="article-tag" data-category="cat-20">
+                  <h3>#コンサル</h3>
+                </li>
+              </ul>
+            </section>
+          </article>
+        </li>
+        <!-- //尾崎 -->
+
+        <!-- 杉原 -->
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-1 cat-6 cat-11 cat-12 cat-19"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/prj002.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="background-image: url(<%= meta.imgPath %>img-interview-item8.jpg)"
+              ></div>
+              <span class="interview-item__bg__heading --project">
+                <img
+                  src="<%= meta.imgPath %>text-person-projectstory.svg"
+                  alt="PROJECT STORY"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/prj002.html"
+                  >医療×AIのデファクトスタンダードを確立する。その覚悟の中で、新型コロナ診断支援AIの歴史的スピード承認。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">杉原賢一 2019年中途入社</p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/prj002.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-6">
+                  <h3>#中途入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-1">
+                  <h3>#プロジェクトストーリー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-11">
+                  <h3>#AI</h3>
+                </li>
+                <li class="article-tag" data-category="cat-12">
+									<h3>#COVID-19</h3></li>
+                <li class="article-tag" data-category="cat-19">
+                  <h3>#メガベンチャー</h3>
+                </li>
+              </ul>
+            </section>
+          </article>
+        </li>
+        <!-- //杉原 -->
+
+        <!-- 田中・須賀・福本 -->
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-2 cat-13 cat-15 cat-16 cat-20"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/talk001.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="background-image: url(<%= meta.imgPath %>img-interview-item9.jpg)"
+              ></div>
+              <span class="interview-item__bg__heading --cross">
+                <img
+                  src="<%= meta.imgPath %>text-person-crosstalk.svg"
+                  alt="CROSS TALK"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/talk001.html"
+                  >20代の成長を最大化し、30代で経営に名乗りを上げる。その覚悟のある人に来てほしい。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">
+                田中良直・須賀亜衣子・福本桂子
+              </p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/talk001.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-2">
+                  <h3>#座談会</h3>
+                </li>
+                <li class="article-tag" data-category="cat-13">
+                  <h3>#執行役員</h3>
+                </li>
+                <li class="article-tag" data-category="cat-20">
+                  <h3>#コンサル</h3>
+                </li>
+                <li class="article-tag" data-category="cat-16">
+                  <h3>#マッキンゼー</h3>
+                </li>
+                <li class="article-tag" data-category="cat-15">
+                  <h3>#20代の成長環境</h3>
+                </li>
+              </ul>
+            </section>
+          </article>
+        </li>
+        <!-- //田中・須賀・福本 -->
+
+        <!-- 新卒の私たちが、迷わず -->
+        <li
+          class="c-show-box interview-item js-filterTarget"
+          data-category="cat-2 cat-4 cat-5 cat-7 cat-15"
+        >
+          <article class="c-show-box__inner">
+            <a href="./person/talk002.html" class="interview-item__bg">
+              <div
+                class="interview-item__bg__inner"
+                style="background-image: url(<%= meta.imgPath %>img-interview-item10_2.jpg)"
+              ></div>
+              <span class="interview-item__bg__heading --cross">
+                <img
+                  src="<%= meta.imgPath %>text-person-crosstalk.svg"
+                  alt="CROSS TALK"
+                  width="30"
+                  height="auto"
+              /></span>
+            </a>
+            <section class="interview-item__content">
+              <h2 class="interview-item__content__title">
+                <a href="./person/talk002.html"
+                  >新卒の私たちが、<br />迷わずエムスリーを選んだ理由。</a
+                >
+              </h2>
+              <p class="interview-item__content__person">
+                花木汐梨・山添勢矢・鎮西尚紀
+              </p>
+              <div class="interview-item__content__link">
+                <a
+                  href="./person/talk002.html"
+                  class="c-btn__readmore__black interview-readmore"
+                  ><span>READ MORE</span></a
+                >
+              </div>
+              <ul class="interview-item__content__tags article-tags">
+                <li class="article-tag" data-category="cat-2">
+                  <h3>#座談会</h3>
+                </li>
+                <li class="article-tag" data-category="cat-4">
+                  <h3>#新卒入社</h3>
+                </li>
+                <li class="article-tag" data-category="cat-7">
+                  <h3>#経営人材</h3>
+                </li>
+                <li class="article-tag" data-category="cat-15">
+                  <h3>#20代の成長環境</h3>
+                </li>
+                <li class="article-tag" data-category="cat-5">
+                  <h3>#新規事業</h3>
+                </li>
+              </ul>
+            </section>
+          </article>
+        </li>
+        <!-- //新卒の私たちが、迷わず、 -->
+      </ul>
+    </div>
+  </div>
+
+  <div class="c-btn__anchor">
+    <button type="button" id="js-scrollTop">
+        <img
+          src="<%= meta.imgPath %>btn-anchor-arrow.svg"
+          alt=""
+          width="222"
+          height="auto"
+      /></button>
+  </div>
+</main>

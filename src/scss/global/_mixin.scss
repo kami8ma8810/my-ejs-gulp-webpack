@@ -1,0 +1,203 @@
+@use "variables"as *;
+@use "sass:math";
+
+@mixin  sorts-mill-goudy {
+  font-family: "SortsMillGoudy",sans-serif;
+}
+@mixin  roboto-semiBold {
+  font-family: "RobotoMonoSemiBold",sans-serif;
+}
+@mixin  roboto-regular {
+  font-family: "RobotoMonoRegular",sans-serif;
+}
+@mixin  roboto-light {
+  font-family: "RobotoMonoLight",sans-serif;
+}
+@mixin  roboto-lightItalic {
+  font-family: "RobotoMonoLightItalic",sans-serif;
+  font-style: italic;
+
+}
+@mixin  koburinaW3 {
+  font-family: "koburinaW3",sans-serif;
+}
+@mixin  koburinaW6 {
+  font-family: "koburinaW6",sans-serif;
+}
+@mixin  mainichiMincho {
+  font-family: "mainichiMincho",serif;
+}
+@mixin  bodoni {
+  font-family: "Bodoni",sans-serif;
+}
+@mixin  bodoni-italic {
+  font-family: "BodoniItalic",sans-serif;
+  font-style: italic;
+}
+@mixin  itc {
+  font-family: "ITC",sans-serif;
+}
+@mixin  avenir {
+  font-family: "Avenir",sans-serif;
+}
+@mixin gotham{
+  font-family: "gotham", sans-serif;
+  font-weight: normal;
+}
+@mixin yumin{
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+
+@mixin yugo{
+  font-family: "Yu Gothic Medium",
+    "游ゴシック Medium",
+    YuGothic,
+    "游ゴシック体",
+    "ヒラギノ角ゴ Pro W3",
+    "メイリオ",
+    sans-serif;
+}
+@mixin aotfGothic{
+  font-family: "aotfGothicMedium",sans-serif;
+}
+@mixin font-hash{
+  font-family: "RobotoMonoRegularHash","游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif ;
+}
+
+// 2行以上は文末を「…」にする（デフォルトは2行
+@mixin clamp($line: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+// メディアクエリ
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @error "指定されたブレークポイントは定義されていません。"+"指定できるブレークポイントは次のとおりです。 -> #{map-keys($breakpoints)}";
+  }
+}
+
+// アニメーション
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards
+) {
+  animation: {
+    name: $name;
+    duration: $duration;
+    timing-function: $timing-function;
+    delay: $delay;
+    iteration-count: $iteration-count;
+    direction: $direction;
+    fill-mode: $fill-mode;
+  }
+}
+
+
+// @mixin font-vw($font_size: 10, $viewsize: 768) {
+// 	font-size: _get_vw($font_size, $viewsize);
+// }
+
+// @mixin width-vw($img_size, $viewsize: 768) {
+// 	width: _get_vw($img_size, $viewsize);
+// }
+
+// @mixin p-vw($property, $size, $viewsize: 768) {
+// 	#{$property}: _get_vw($size, $viewsize);
+// }
+
+// div {
+// 	@include p-vw(padding, 20);
+// 	@include p-vw(margin, 10);
+// }
+
+
+@mixin w1260 {
+  @media screen and (min-width:1260px){
+    @content;
+  }
+}
+
+// //-----------------------------
+// // px to rem
+// //-----------------------------
+// $baseSize:16;
+
+// @mixin rem($size) {
+// 	font-size: $size + px; //IE対応
+// 	font-size: ($size / $baseSize) + rem;
+// }
+
+// //-----------------------------
+// // px to vw
+// //-----------------------------
+// @function get_vw($size, $viewport:320) {
+// 	$rate: 100 / $viewport;
+// 	@return $rate * $size * 1vw;
+// }
+
+// @mixin vw($font_size:10) {
+// 	font-size: $font_size * 1px;
+// 	font-size: get_vw($font_size);
+// }
+//-----------------------------
+// ビューポート可変フォントサイズ
+//-----------------------------
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin viewScale($property,
+	$min-vp,
+	$min-length,
+	$max-vp,
+	$max-length,
+	$vp-unit: "vw"
+
+) {
+	$u1: unit($min-vp);
+	$u2: unit($min-length);
+	$u3: unit($max-vp);
+	$u4: unit($max-length);
+	$a: strip-unit($min-vp);
+	$b: strip-unit($min-length);
+	$c: strip-unit($max-vp);
+	$d: strip-unit($max-length);
+
+	@if $u1==$u3 and $u2==$u4 {
+		$x: ($d - $b) / ($c - $a) * 100+#{$vp-unit};
+		$y: ($c * $b - $a * $d) / ($c - $a) * 1+#{$u2};
+
+		#{$property}: $min-length;
+
+		@media screen and (min-width: $min-vp) {
+			@if $y==0 {
+				#{$property}: $x;
+			}
+
+			@else {
+				#{$property}: calc(#{$x} + #{$y});
+			}
+		}
+
+		@media screen and (min-width: $max-vp) {
+			#{$property}: $max-length;
+		}
+	}
+}
+
+// Usage
+// .sample {
+// 	@include vs(margin-top, 767px, 5%, 1024px, 10%);
+// }

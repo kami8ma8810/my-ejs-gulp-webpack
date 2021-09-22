@@ -1,0 +1,231 @@
+@use "../global"as *;
+@keyframes loadingFadeInX {
+  0%{
+    position: absolute;
+    // left: 51%;
+    opacity: 0;
+    transform: translate3d(-50%,10%,0);
+  }
+  100%{
+    position: absolute;
+    // left: 51%;
+    opacity: 1;
+    transform: translate3d(-50%,0,0);
+  }
+}
+.c-kvHalf{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  &__text{
+    height: 50vh;
+    color: $mainBlue;
+    @include mq(tab) {
+      height:346px;
+    }
+  }
+  &__en{
+    @include sorts-mill-goudy;
+    font-size: 78px;
+    font-size: vw(156);
+    letter-spacing: 0.05em;
+
+    span{
+      display: none;
+    }
+    @include mq(md) {
+      font-size: 126px;
+    }
+    @include mq(tab) {
+      span{
+        display: inline;
+      }
+      br{
+        display:none;
+      }
+    }
+    @include mq(xl) {
+      font-size: 164px;
+      letter-spacing: 0;
+    }
+    .--person & {
+      width: vw(651);
+      font-size: 0!important;
+      letter-spacing: 0;
+      @include mq(md) {
+        width: 651px;
+      }
+      @include mq(xl) {
+        width:684px;
+      }
+    }
+    .--recruit & {
+      width: vw(709);
+      font-size: 0!important;
+      letter-spacing: 0;
+      @include mq(md) {
+        width: 651px;
+      }
+      @include mq(xl) {
+        width:786px;
+      }
+    }
+  }
+
+  &__number{
+    @include roboto-regular;
+    margin-right: vw(-10);
+    margin-bottom: vw(40);
+    font-size: vw(135);
+    text-align: right;
+
+    @include mq(md) {
+      margin-bottom: 40px;
+      font-size: 105px;
+    }
+    @include mq(tab) {
+      margin-top: -15px;
+      margin-right: 0;
+      margin-bottom: 0;
+      margin-left: 35px;
+    }
+    @include mq(xl) {
+      margin-top: -20px;
+      font-size: 135px;
+    }
+    .--person &{
+      margin-bottom: vw(37);
+      @include mq(md) {
+        margin-bottom: 37px;
+      }
+      @include mq(xl) {
+        margin-top: -16px;
+        margin-left: 211px;
+      }
+    }
+    .--recruit &{
+      margin-right: vw(16);
+      margin-bottom: vw(37);
+      @include mq(md) {
+        margin-right:16px;
+        margin-bottom: 37px
+      }
+      @include mq(xl) {
+        margin-top: -17px;
+        margin-left: 108px;
+      }
+    }
+  }
+  &__yumin{
+    @include yumin;
+    margin-left: vw(62);
+    font-size: vw(40);
+    font-weight: 600;
+    letter-spacing: .05em;
+    transform: rotate(90deg);
+    transform-origin: center left;
+    @include mq(md) {
+      font-size: 30px ;
+    }
+    @include mq(xl) {
+      margin-left: vw_lg(147);
+      font-size:40px;
+    }
+    &.--recruit{
+      letter-spacing: .15em;
+    }
+  }
+  &__title{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-top: vw(104);
+    text-align: left;
+    @include mq(md) {
+      padding-top: 95px;
+    }
+    @include mq(tab) {
+      padding-top: 220px;
+    }
+    span{
+      display: inline-block;
+    }
+    &__bottom{
+      position: absolute;
+      bottom: 35%;
+      left: 51%;
+      z-index: 1;
+      width: auto;
+      line-height: 0.93;
+      opacity: 0;
+      // animation: loadingFadeInX 1.8s $easeOutCubic forwards;
+      transition:transform 1.2s $easeOutCubic .2s,opacity 1.4s $easeOutCubic .2s;
+      // transform: translateX(-50%);
+      transform: translate3d(-50%,10%,0);
+      &.is-show{
+        opacity: 1;
+        transform: translate3d(-50%,0%,0);
+      }
+
+      &.--person{
+        bottom: 47.9%;
+        left: 49.6%;
+        @include mq(xl) {
+          top: 250px;
+          bottom: auto;
+          left: 52.4%;
+        }
+      }
+      &.--recruit{
+        bottom: 48.2%;
+        left: 49.8%;
+        @include mq(xl) {
+          top: 248px;
+          bottom: auto;
+          left: 53.5%;
+        }
+      }
+      @include mq(md) {
+        bottom: 33%;
+      }
+      @include mq(tab) {
+        top: 274px;
+        bottom: auto;
+        left: 52.5%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        margin-left: 0;
+      }
+      @include mq(xl) {
+        top: 252px;
+      }
+
+    }
+  }
+  &__bg{
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    width: 100%;
+    height: 50vh;
+    @include mq(tab) {
+      top: 346px;
+      height:calc(100vh - 346px);
+    }
+  }
+}
+@keyframes loadingFadeInX {
+  0%{
+    position: absolute;
+    // left: 51%;
+    opacity: 0;
+    transform: translate3d(-50%,10%,0);
+  }
+  100%{
+    position: absolute;
+    // left: 51%;
+    opacity: 1;
+    transform: translate3d(-50%,0,0);
+  }
+}

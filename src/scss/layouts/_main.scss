@@ -1,0 +1,425 @@
+@use "../global"as *;
+
+.top-main{
+  margin-top: vw(55);
+  @include mq(xl) {
+    margin-top: -19px;
+  }
+}
+.section-value{
+  position: relative;
+  margin-top: vw(120);
+  @include mq(lg) {
+    max-width: 1000px;
+    margin-top: 116px;
+  }
+  @include mq(tab) {
+    margin-right:auto;
+    margin-left:auto;
+  }
+
+}
+.section-value__title{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: vw(242);
+  max-width: 300px;
+}
+.section-value__content{
+  width:  vw(506);
+  padding-top: vw(44);
+  margin-right: vw(50);
+  margin-left: auto;
+  @include mq(tab) {
+    width:735px;
+    padding-top: 50px;
+    margin-right: 0;
+  }
+  .movie{
+    position: relative;
+    width: 100%;
+    height: vw(285);
+    transition: opacity .2s $easeInOutSine;
+    @include mq(lg) {
+      width: 735px;
+      height: 415px;
+    }
+    &:hover{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+    video{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .movie__btn{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      display: inline-block;
+      width: vw(60);
+      height: vw(40);
+      padding: 0;
+      color: white;
+      cursor: pointer;
+      transform: translate(-50%,-50%);
+      @include mq(lg) {
+        width: 86px;
+        height: 57px;
+      }
+    }
+  }
+  .text{
+    width: vw(433);
+    max-width: 440px;
+    margin-top: vw(32);
+    margin-right: 0;
+    margin-left: auto;
+    font-weight: 600;
+    color: $mainBlue;
+    text-align:justify;
+    text-justify:inter-ideograph;
+    @include yumin;
+    @include mq(lg) {
+      padding-left: 10px;
+      margin-top: 47px;
+    }
+    &__title{
+      font-size: vw(32);
+      line-height: 1.3;
+      @include mq(lg) {
+        font-size: 24px;
+        white-space: nowrap;
+      }
+      span{
+        display: block;
+        @include mq(lg) {
+          display: inline-block;
+        }
+        &.en{
+          letter-spacing: .04em;
+        }
+        &.ja{
+          letter-spacing: -.1em;
+        }
+      }
+    }
+    &__p{
+      margin-top: vw(15);
+      font-size: vw(24);
+      line-height: 1.7;
+      @include mq(lg) {
+        padding-left: 4px;
+        margin-top: 26px;
+        font-size: 16px;
+        line-height: 1.9;
+      }
+    }
+  }
+}
+
+.section-topics{
+  margin-top: vw(184);
+  @include mq(lg) {
+    margin-top: 350px;
+  }
+  &__title{
+    @include roboto-lightItalic;
+    font-size: vw(50);
+    color: $mainBlue;
+    text-align: center;
+    letter-spacing: .05em;
+    @include mq(lg) {
+      font-size: 62px;
+    }
+  }
+}
+.topics-items{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: vw(650);
+  min-height: vw(588);
+  margin-top: vw(20);
+  margin-right:auto;
+  margin-left:auto;
+  color: black;
+  @include mq(lg) {
+    min-height: 518px;
+  }
+  @include mq(xl) {
+    // max-width: 1000px;
+    max-width: 950px;
+    // min-height: 518px;
+    margin-top: 35px;
+  }
+  & .--block{
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+.topics-item{
+  display: inline-block;
+  font-family: "RobotoMonoRegularHash","游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif ;
+  font-size: vw(30);
+  line-height: 2.8;
+  & + .topics-item{
+    padding-left: 1em;
+  }
+  @include mq(lg) {
+    font-size: 42px;
+    line-height: 1.78;
+  }
+  &.--spacing{
+    letter-spacing: -.12em;
+  }
+  // @include mq(xl) {
+  //   font-size: 42px;
+  // }
+}
+.section-number{
+  position: relative;
+  max-width: 1366px;
+  @include mq(xl) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .inner{
+    position: absolute;
+    z-index: 1;
+  }
+  .title{
+    color: $mainBlue;
+    span{
+      display: inline-block;
+    }
+    .en{
+      font-size: vw(114);
+      // text-shadow: 0px 0px 4px #fff;
+      letter-spacing: .1em;
+      white-space: nowrap;
+      @include sorts-mill-goudy;
+      @include mq(xl) {
+        font-size: 180px;
+        // text-shadow: 0px 0px 8px #fff;
+      }
+    }
+    .number{
+      @include roboto-regular;
+      font-size: vw(120);
+      @include mq(xl) {
+        font-size: 150px;
+      }
+    }
+    .desc{
+      font-size: vw(30);
+      @include yumin;
+      font-weight: 600;
+      @include mq(xl) {
+        font-size:40px ;
+      }
+    }
+  }
+  // .bg-img--sp{
+  //   @include mq(xl) {
+  //     display:none;
+  //   }
+  // }
+  // .bg-img--pc{
+  //   display: none;
+  //   @include mq(xl) {
+  //     display:inline;
+  //   }
+  // }
+}
+
+// エムスリーについて
+.section-about{
+  margin-top: vw(180);
+  @include mq(xl) {
+    margin-top: 100px;
+  }
+  .inner{
+    top: vw(55);
+    left: vw(40);
+    @include mq(xl) {
+      top:100px;
+      left: 136px;
+    }
+  }
+  .title{
+    .en{
+      letter-spacing: 0.06em;
+    }
+    .desc{
+      width: auto;
+      margin-top: vw(-24);
+      margin-right: vw(16);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      transform: rotate(-90deg);
+      transform-origin: right bottom;
+      @include mq(xl) {
+        margin-top: -20px;
+      }
+    }
+  }
+  .sub-title{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: vw(-12);
+    margin-right: vw(-8);
+    @include mq(xl) {
+      margin-top: -35px;
+      margin-right: -4px;
+    }
+  }
+  .bg-img{
+    width: vw(520);
+    max-width: 910px;
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .about-btn__readmore{
+    margin-top: vw(292);
+    margin-left: vw(120);
+    @include mq(xl) {
+      margin-top: 364px;
+      margin-left: 408px;
+    }
+  }
+}
+
+// エムスリーの人
+.section-person{
+  margin-top: vw(216);
+  @include mq(xl) {
+    margin-top: 255px;
+  }
+  .inner{
+    top: vw(-72);
+    left: vw(40);
+    @include mq(xl) {
+      top:-62px;
+      left: 142px;
+    }
+  }
+  .title{
+    position: relative;
+    .en{
+      margin-left: vw(96);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      transform: rotate(90deg);
+      transform-origin: left top;
+      @include mq(xl) {
+        margin-left: 175px;
+        letter-spacing: .04em;
+      }
+    }
+    .desc{
+      width: auto;
+      letter-spacing: 0.04em;
+    }
+  }
+  .sub-title{
+    position: absolute;
+    &.__desc{
+      top: vw(14);
+      left: vw(118);
+      @include mq(xl) {
+        top:7px;
+        left: 200px;
+      }
+    }
+    &.__number{
+      top: vw(-20);
+      right: vw(-68);
+      @include mq(xl) {
+        top:-36px;
+        right: -86px;
+      }
+    }
+  }
+  .bg-img{
+    width: 100%;
+  }
+  .person-btn__readmore{
+    margin-top: vw(-18);
+    margin-right: auto;
+    margin-left: auto;
+    @include mq(xl) {
+      margin-top: -32px;
+    }
+  }
+}
+
+// 採用情報
+.section-recruit{
+  margin-top: vw(150);
+  @include mq(xl) {
+    margin-top: 200px;
+  }
+  .inner{
+    top: vw(137);
+    right: vw(114);
+    @include mq(xl) {
+      top:145px;
+      right: 257px;
+    }
+  }
+  .title{
+    .en{
+      letter-spacing: 0.07em;
+      @include mq(xl) {
+        letter-spacing: 0.065em;
+      }
+    }
+    .desc{
+      width: auto;
+      margin-top: vw(-12);
+      margin-right: vw(24);
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+      transform: rotate(-90deg);
+      transform-origin: right bottom;
+      @include mq(xl) {
+        margin-top: -18px;
+        margin-right: 73px;
+      }
+    }
+  }
+  .sub-title{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: vw(-18);
+    margin-left: vw(-100);
+    @include mq(xl) {
+      margin-top: -31px;
+      margin-left: -139px;
+    }
+  }
+  .bg-img{
+    width: vw(520);
+    margin-right: 0;
+    margin-left: auto;
+    @include mq(xl) {
+      width:910px;
+    }
+  }
+  .recruit-btn__readmore{
+    margin-top: vw(106);
+    @include mq(xl) {
+      margin-top: 175px;
+      margin-left: 3px;
+    }
+  }
+}

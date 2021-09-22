@@ -1,0 +1,61 @@
+@use "../global"as *;
+
+.c-graph{
+  color: $mainBlue;
+}
+.c-graph-heading__inner{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  border-bottom: vw(3) solid $mainBlue;
+  @include mq(md) {
+    border-width:2px;
+  }
+  .c-graph-caption{
+    display: inline-block;
+    padding-right: vw(16);
+    padding-left: vw(20);
+    font-size: vw(22);
+    letter-spacing: .05em;
+    border-left: vw(1) solid $mainBlue;
+    @include roboto-regular;
+    @include mq(md) {
+      padding-right:0px;
+      padding-left: 14px;
+      margin-right: -4px;
+      font-size:16px;
+      border-width:0.75px;
+    }
+  }
+}
+.c-graph-heading__title{
+  margin-top: vw(20);
+  margin-left: .2em;
+  @include yugo;
+  font-size: vw(34);
+  text-align: left;
+  letter-spacing: 0.1em;
+  @include mq(md) {
+    margin-top: 8px;
+    margin-left: 0;
+    font-size:26px
+  }
+}
+.c-graph-desc{
+  @include yugo;
+  font-size: vw(26);
+  @include mq(lg) {
+    font-size:20px;
+  }
+}
+.c-graph-img{
+  position: relative;
+  margin-right:auto;
+  margin-left:auto;
+  text-align: center;
+  &.--showUp{
+    position: absolute;
+    display: inline-block;
+  }
+}

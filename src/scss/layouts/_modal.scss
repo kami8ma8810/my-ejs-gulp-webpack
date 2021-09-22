@@ -1,0 +1,83 @@
+@use "../global"as *;
+
+.modal-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z-index(drawer-and-modal);
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(40, 40, 40, 0.9);
+}
+
+.modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: vw(650);
+  height: vw(375.9);
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  @include mq(lg) {
+    width: vw_lg(830);
+    max-width: 830px;
+    height: vw_lg(480);
+    max-height: 480px;
+  }
+}
+
+.iframe-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  iframe{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // object-fit: cover;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: vw(-95);
+  right: 0;
+  display: inline-block;
+  width: vw(55);
+  height: vw(55);
+  padding: 0;
+  cursor: pointer;
+  @include mq(lg) {
+    top: -68px;
+    right: 0;
+    width: 55px;
+    height: 55px;
+  }
+}
+.modal-close__icon{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  line-height: 1;
+  color: #fff;
+  vertical-align: middle;
+  background: currentColor;
+  transform: rotate(45deg);
+  &::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: inherit;
+    transform: rotate(90deg);
+  }
+}

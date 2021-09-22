@@ -1,0 +1,127 @@
+<header id="header" class="header <%= meta.headerNoBlend %>">
+  <div class="header-container <%= meta.headerAddClass %>">
+    <section class="header-inner">
+      <h1 class="header-logo">
+        <a href="<%= meta.linkPath %>">
+          <img class="header-logo__img --black"
+            src="<%= meta.imgPath %>text-header-title.svg"
+            alt="M3,Inc. RECRUITING SITE 2023"
+          />
+          <img class="header-logo__img --white"
+            src="<%= meta.imgPath %>text-header-logo-white.svg"
+            alt="M3,Inc. RECRUITING SITE 2023"
+          />
+        </a>
+      </h1>
+      <div class="header-btn-container">
+        <div class="header-entry-btn">
+          <a href="https://open.talentio.com/1/c/m3/requisitions/detail/21958?utm_source=m3-lp&utm_campaign=fresh&utm_medium=web"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ENTRY</a>
+        </div>
+        <div class="hamburger-btn">
+          <button
+            type="button"
+            id="js-drawerOpen"
+            aria-controls="drawer"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line">
+              <span class="sr-only">メニューを開く</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</header>
+
+<!-- drawer -->
+<div id="js-drawer" class="drawer js-drawer" aria-expanded="false">
+  <div class="drawer__backdrop js-backdrop"></div>
+  <nav class="drawer__nav">
+    <div class="drawer__nav__header <%= meta.headerAddClass %>">
+      <h1 class="header-logo">
+        <a href="<%= meta.linkPath %>">
+          <img
+            src="<%= meta.imgPath %>text-header-title-white.svg"
+            alt="M3,Inc. RECRUITING SITE 2023"
+          />
+        </a>
+      </h1>
+      <div class="header-btn-container">
+        <div class="header-entry-btn">
+          <a href="https://open.talentio.com/1/c/m3/requisitions/detail/21958?utm_source=m3-lp&utm_campaign=fresh&utm_medium=web" target="_blank" rel="noopener noreferrer">ENTRY</a>
+        </div>
+        <div id="js-closeDrawer" class="drawer-close">
+          <button type="button" aria-controls="drawer" aria-expanded="false">
+            <span class="hamburger-line-close">
+              <span class="sr-only">メニューを閉じる</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer__nav__content">
+      <ul class="drawer__nav-items">
+        <li class="drawer__nav-item">
+          <a href="<%= meta.linkPath %>"
+            ><span class="en">TOP</span></a
+          >
+        </li>
+        <li class="drawer__nav-item about">
+          <a href="<%= meta.linkPath %>about.html"
+            ><span class="en">ABOUT US</span><span class="ja">&nbsp;-&nbsp;エムスリーについて</span></a
+          >
+          <ul class="about-items">
+            <li class="about-item">
+              <a href="<%= meta.linkPath %>about/mission.html"
+                >ミッションと事業</a
+              >
+            </li>
+            <li class="about-item">
+              <a href="<%= meta.linkPath %>about/culture.html"
+                >エムスリーの文化</a
+              >
+            </li>
+            <li class="about-item">
+              <a href="<%= meta.linkPath %>about/data.html"
+                >数字で見る成長環境</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="drawer__nav-item person">
+          <a href="<%= meta.linkPath %>person.html"
+            ><span class="en">PERSON</span><span class="ja">&nbsp;-&nbsp;エムスリーの人</span></a
+          >
+        </li>
+        <li class="drawer__nav-item recruit">
+          <a href="<%= meta.linkPath %>recruit.html"
+            ><span class="en">RECRUIT</span><span class="ja">&nbsp;-&nbsp;採用情報</span></a
+          >
+        </li>
+      </ul>
+      <a href="<%= meta.linkPath %>message.html" class="drawer-fastcareer">
+        <span>ファーストキャリアの選択に関する問題提起</span>
+      </a>
+    </div>
+  </nav>
+</div>
+<!-- //drawer -->
+
+<!-- modal -->
+<div id="js-modalArea" class="modal-area">
+  <div id="js-modalBg" class="modal-bg"></div>
+  <div class="modal-container">
+		<div class="iframe-inner">
+			<iframe id="js-youtube" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<button id="js-closeModal" class="modal-close">
+				<span class="modal-close__icon"></span><span class="sr-only">モーダルを閉じる</span>
+			</button>
+		</div>
+  </div>
+</div>
+<!-- //modal -->

@@ -1,0 +1,852 @@
+@use "../global"as *;
+
+.p-numbers-main {
+  @include yumin;
+  .c-btn__anchor{
+    margin-top: vw(105);
+    @include mq(xl) {
+      margin-top:105px;
+    }
+  }
+}
+
+.p-numbers-kv {
+  display: flex;
+  padding-bottom: vw(196);
+  margin-top: vw(162);
+  color: $mainBlue;
+  @include mq(lg) {
+    margin-top: 208px;
+    overflow: hidden;
+
+  }
+  @include mq(xl) {
+    padding-bottom: 132px;
+  }
+}
+.p-numbers-kv__side {
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
+  margin-right: vw(18);
+  font-size: vw(30);
+  letter-spacing: 0.08em;
+  writing-mode: vertical-rl;
+  @include mq(lg) {
+    margin-top: 3px;
+    margin-right: 23px;
+    font-size: 30px;
+  }
+  &::after {
+    position: absolute;
+    top: 104%;
+    left: 48%;
+    display: block;
+    width: 1px;
+    height: vw(866.5);
+    content: "";
+    background-color: $mainBlue;
+    @include mq(xl) {
+      height: 323px;
+    }
+  }
+}
+.p-numbers-kv__main{
+  margin-top: vw(5);
+  font-weight: bold;
+  @include mq(lg) {
+    margin-top:0;
+  }
+}
+.p-numbers-kv__title {
+  &__text {
+    display: block;
+    font-size: vw(70);
+    @include mq(lg) {
+      font-size:90px;
+    }
+    @include mq(xl) {
+      display:inline-block;
+      margin-bottom: 37px;
+    }
+    & + &.p-numbers-kv__title__text{
+      margin-top: vw(35);
+      @include mq(xl) {
+        margin-top:0;
+      }
+    }
+    &:nth-of-type(2){
+      letter-spacing: -0.1em;
+      @include mq(xl) {
+        margin-left:-10px;
+        letter-spacing: -0.08em;
+      }
+    }
+    &:nth-of-type(3){
+      letter-spacing: .05em;
+      @include mq(xl) {
+        display: block;
+      }
+    }
+  }
+  &__desc{
+    margin-top: vw(88);
+    margin-left: vw(10);
+    font-size: vw(26);
+    font-weight: bold;
+    line-height: 1.95;
+    white-space: nowrap;
+    @include mq(lg) {
+      font-size: 16px;
+    }
+    @include mq(xl) {
+      margin-top:58px;
+      margin-left: 337px;
+      line-height: 2;
+    }
+    .is-sp{
+      @include mq(xl) {
+        display:none;
+      }
+    }
+  }
+}
+
+.section-graph__inner{
+  margin-top: vw(72);
+  @include mq(lg) {
+    margin-top:35px;
+  }
+  .c-graph-heading__inner .c-graph-caption{
+    padding-right: vw(12);
+    @include mq(lg) {
+      padding-right:10px;
+    }
+  }
+  .c-graph-heading__title{
+    @include mq(lg) {
+      margin-top:14px;
+      margin-left: 4px;
+    }
+  }
+}
+
+.section-graph__title{
+  display: inline-block;
+  padding: vw(10) vw(12) vw(8) vw(60);
+  font-size: vw(42);
+  color: #fff;
+  letter-spacing: 0.07em;
+  background-color: $mainBlue;
+  @include mq(lg) {
+    padding:11px 7px 9px 56px;
+    font-size: 30px;
+    letter-spacing: 0.08em
+  }
+  @include mq(xl) {
+    margin-left:vw_lg(132);
+  }
+}
+
+// 成長産業
+.growth-industry{
+  margin-top: vw(53);
+  @include mq(xl) {
+    margin-top:37px;
+  }
+
+  // グローバル医療
+  .global-1{
+    .c-graph-heading__title{
+      letter-spacing: .15em;
+      @include mq(xl) {
+        letter-spacing: .09em;
+      }
+    }
+  }
+
+  .graph-desc-obj{
+    position: relative;
+    width: vw(570);
+    height: vw(343);
+    margin-top: vw(20);
+    margin-right:auto;
+    margin-left:auto;
+    @include mq(tab) {
+      width:395px;
+      height:238px;
+      margin-top: 14px;
+    }
+    &__img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%,-50%);
+      @include mq(lg) {
+        width: 70%;
+      }
+      @include mq(tab) {
+        width: 100%;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    ul{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      margin-left: vw(15);
+      transform: translate(-50%,-50%);
+      @include mq(lg) {
+        top: 48%;
+        width:auto;
+        margin-left: 8px;
+        white-space: nowrap;
+      }
+      @include mq(tab) {
+        width:236px;
+        white-space: normal;
+      }
+      li{
+        position: relative;
+        padding-left: 1.1em;
+        margin-bottom: vw(40);
+        text-align:justify;
+        text-justify:inter-ideograph;
+        letter-spacing: -0.01em;
+        @include mq(lg) {
+          margin-bottom:6px;
+          line-height:1.5;
+          letter-spacing: -0.05em;
+        }
+
+        &::before{
+          position: absolute;
+          top: .42em;
+          left: 0;
+          display: inline-block;
+          width: 0.9em;
+          height: 0.9em;
+          content: "";
+          background-color: $mainBlue;
+          border-radius: 50%;
+          transform: translateY(-50%);
+          @include mq(lg) {
+            top: 16px;
+            left: 2px;
+            width:17px;
+            height:17px
+          }
+        }
+      }
+    }
+  }
+  .c-graph-img{
+    width: vw(647);
+    @include mq(tab) {
+      width:448px;
+    }
+    &.global-iryo{
+      margin-top: vw(25);
+      @include mq(lg) {
+        margin-top:16px;
+      }
+    }
+    &.--showUp{
+      top: vw(-5);
+      left: vw(70);
+      width: vw(284.5);
+      @include mq(lg) {
+        top: -4px;
+        left: 47px;
+        width:197px;
+      }
+    }
+  }
+  // グローバルIT市場
+  .global-2{
+    margin-top: vw(126);
+    @include mq(tab) {
+      margin-top:0;
+    }
+    .c-graph-heading__title{
+      letter-spacing: .08em;
+    }
+    .graph-desc-obj ul{
+      top: 48%;
+      @include mq(lg) {
+        margin-left: 13px;
+      }
+      li{
+        margin-bottom: vw(38);
+        @include mq(lg) {
+          margin-bottom:8px;
+        }
+      }
+    }
+    .c-graph-img{
+      margin-top: vw(24);
+      @include mq(lg) {
+        margin-top:16px;
+      }
+    }
+  }
+  // グローバル「医療×DX」見込み
+  .global-3{
+    margin-top: vw(126);
+    @include mq(tab) {
+      margin-top:115px;
+    }
+    .is-sp{
+      @include mq(xl) {
+        display: none;
+      }
+    }
+    .c-graph-heading__inner .c-graph-caption{
+      @include mq(xl) {
+        padding-right:2px;
+        padding-left: 12px;
+      }
+    }
+    .c-graph-heading__title{
+      line-height: 1.2;
+      .is-sp{
+        @include mq(tab) {
+          display:none;
+        }
+      }
+      @include mq(tab) {
+        margin-top:12px;
+        margin-left:0;
+        letter-spacing: 0.02em;
+      }
+    }
+
+    .iryo-dx-pc{
+      position: relative;
+      .is-sp{
+        @include mq(tab) {
+          display: none;
+        }
+      }
+      .is-pc{
+        display: none;
+        @include mq(tab) {
+          display:inline;
+        }
+      }
+    }
+    .c-graph-desc{
+      @include mq(tab) {
+        position:absolute;
+        top: 27px;
+        left: 110px;
+        width: 324px;
+        height: 295px;
+        margin-top: 0;
+      }
+    }
+    .graph-desc-obj{
+      @include mq(tab) {
+        width: 100%;
+        height:100%;
+        margin-top: 0;
+      }
+      ul{
+        margin-left: vw(60);
+        @include mq(lg) {
+          top: 51%;
+          left: 52%;
+          margin-left:0;
+          text-align:justify;
+          text-justify:inter-ideograph;
+        }
+        @include mq(tab) {
+          left: 43%;
+          width:220px;
+        }
+        li{
+          margin-bottom: vw(25);
+          @include mq(lg) {
+            margin-bottom:4px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+    .c-graph-img{
+      margin-top: vw(10);
+
+      @include mq(tab) {
+        width: 1000px;
+        margin-top:7px;
+      }
+
+      &.--showUp{
+        top: vw(3);
+        left: vw(90);
+        width: vw(294);
+        @include mq(lg) {
+          top: 21px;
+          right: 283px;
+          left: auto;
+          width:197px;
+        }
+      }
+    }
+  }
+
+  .graph-flex-items{
+    @include mq(tab) {
+      display:flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  .graph-flex-item{
+    @include mq(tab) {
+      width: 48%;
+      max-width:450px;
+    }
+  }
+}
+
+// 成長企業
+.growth-company{
+  margin-top: vw(200);
+  @include mq(lg) {
+    margin-top: 218px;
+  }
+
+  &__kv{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: vw(650);
+    height:vw(350);
+    margin-top: vw(50);
+    margin-right:auto;
+    margin-left:auto;
+    font-weight: bold;
+    color: $mainBlue;
+    background-color: #f2f5fb;
+    @include yugo;
+    @include mq(lg) {
+      width: 780px;
+      height: 420px;
+      margin-top: 50px;
+    }
+    &__bg{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 0;
+      display: inline-block;
+      width:vw(561.8);
+      transform: translate(-50%,-50%);
+      @include mq(lg) {
+        width:674px;
+      }
+    }
+    &__inner{
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      dt{
+        margin-top: vw(48);
+        font-size: vw(28);
+        letter-spacing: 0.08em;
+        @include mq(lg) {
+          margin-top: 63px;
+          font-size:31px;
+        }
+      }
+      dd{
+        position: relative;
+        width: vw(398);
+        margin-top: vw(170);
+        font-size: vw(30);
+        text-align: left;
+        letter-spacing: .08em;
+        @include mq(lg) {
+          width:484px;
+          margin-top: 185px;
+          font-size: 36px;
+        }
+        .num{
+          position: absolute;
+          bottom:-47%;
+          left: 54%;
+          display: inline-block;
+          font-size: vw(128);
+          font-weight: normal;
+          letter-spacing: 0.05em;
+          @include bodoni-italic;
+          @include mq(lg) {
+            left: 53%;
+            font-size:152px;
+          }
+        }
+        .text{
+          position: absolute;
+          bottom: 0;
+          left:93%;
+          display: inline-block;
+          @include mq(lg) {
+            left:92%;
+            font-size:31px;
+          }
+        }
+      }
+    }
+  }
+  .c-graph-heading__title{
+    margin-top: vw(26);
+    margin-left: 0;
+    font-size: vw(34);
+    letter-spacing: 0.06em;
+    @include mq(lg) {
+      margin-left: 0;
+      font-size:26px;
+    }
+  }
+  .section-rieki{
+    margin-top: vw(118);
+    @include mq(lg) {
+      margin-top:110px;
+      .c-graph-heading__inner .c-graph-caption{
+        padding-right: 5px;
+        padding-left: 12px;
+      }
+    }
+    .is-sp{
+      @include mq(lg) {
+        display: none
+      }
+    }
+    .is-pc{
+      display: none;
+      @include mq(lg) {
+        display:inline;
+      }
+    }
+  }
+  // 売り上げ収益
+  .uriage{
+    .c-graph-img{
+      margin-top: vw(-36);
+      @include mq(lg) {
+        margin-top:-15px;
+      }
+    }
+  }
+  // 営業利益
+  .eigyo{
+    margin-top: vw(122);
+    @include mq(lg) {
+      margin-top: 115px;
+    }
+    .c-graph-heading__title{
+      letter-spacing: 0.03em;
+    }
+    .c-graph-img{
+      width: vw(662);
+      margin-top: vw(-48);
+      margin-left: vw(-10);
+      @include mq(lg) {
+        width: 100%;
+        max-width:998px;
+        margin-top: -17px;
+        margin-left: -2px;
+      }
+    }
+  }
+  // 事業発展数
+  .growth-company__kv.jigyo{
+    margin-top: vw(120);
+    @include mq(lg) {
+      margin-top:148px;
+    }
+    .growth-company__kv__bg{
+      top: 58%;
+      left: 51%;
+      width: vw(545);
+      @include mq(lg) {
+        top: 57%;
+        width:624px;
+        .is-sp{
+          display: none;
+        }
+        .is-pc{
+          display: inline;
+        }
+      }
+      .is-pc{
+        display: none;
+      }
+    }
+    .growth-company__kv__inner{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      dl{
+        width: 50%;
+        &.country{
+          dt{
+            margin-left: vw(10);
+            @include mq(lg) {
+              margin-left: 43px;
+            }
+          }
+          dd{
+            padding-right: vw(67);
+            text-align: right;
+            @include mq(lg) {
+              padding-right: 73px
+            }
+            .num{
+              left: 19%;
+              letter-spacing: -.03em;
+              @include mq(lg) {
+                left:24%
+              }
+            }
+            &.small{
+              padding-right: vw(84);
+              @include mq(lg) {
+                padding-right:115px;
+              }
+            }
+          }
+        }
+        &.count{
+          dt{
+            margin-left: vw(16);
+            @include mq(lg) {
+              margin-left: -20px;
+            }
+          }
+          dd{
+            padding-right: vw(44);
+            text-align: right;
+            @include mq(lg) {
+              padding-right: 80px;
+            }
+            .num{
+              left: 18%;
+              letter-spacing: 0.05em;
+              @include mq(lg) {
+                left:14%
+              }
+            }
+            &.small{
+              padding-right: vw(78);   @include mq(lg) {
+                padding-right:142px;
+              }
+            }
+          }
+        }
+      }
+      dt{
+        margin-top: vw(42);
+        @include mq(lg) {
+          margin-top: 52px;
+        }
+      }
+      dd{
+        width: 100%;
+        margin-top: vw(156);
+        text-align: right;
+        @include mq(lg) {
+          margin-top: 191px;
+          font-size: 31px;
+        }
+      }
+      dd.small{
+        margin-top: vw(20);
+        font-size: vw(16);
+        text-align: center;
+        transform: scale(0.8);
+        @include mq(lg) {
+          margin-top: 29px;
+          font-size: 17px;
+          transform: none;
+        }
+      }
+
+    }
+  }
+
+  // m3.com登録数
+  .c-graph.m3com {
+    margin-top: vw(128);
+    @include mq(lg) {
+      width:700px;
+      margin-top:146px;
+    }
+    .c-graph-heading__title{
+      margin-top: vw(24);
+      margin-left: vw(4);
+      letter-spacing: .1em;
+      @include mq(lg) {
+        margin-top:8px;
+        margin-left:0;
+      }
+    }
+    .c-graph-img{
+      width: vw(698.6);
+      margin-top: vw(17);
+      margin-left: vw(-24);
+      @include mq(lg) {
+        width:100%;
+        margin-top: 16px;
+        margin-left: -1px;
+      }
+      &.--showUp{
+        top: vw(13);
+        left: vw(104);
+        width: vw(265.6);
+        @include mq(lg) {
+          top: -5px;
+          left: 80px;
+          width: 265.6px;
+        }
+      }
+    }
+  }
+}
+// 成長環境
+.growth-env{
+  margin-top: vw(200);
+  @include mq(lg) {
+    margin-top: 197px;
+  }
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: vw(50);
+    @include mq(lg) {
+      margin-top: 53px
+    }
+  }
+  &__item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: vw(300);
+    height: vw(350);
+    margin-bottom: vw(50);
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    @include mq(lg) {
+      margin-bottom: 50px;
+    }
+    @include mq(tab) {
+      width: 30%;
+      max-width:300px;
+      height:350px;
+    }
+    &:nth-of-type(1){
+      @include mq(lg) {
+        background-image:url(#{$imgDir}bg-growth-env1-pc.svg)!important
+      }
+      .num{
+        margin-top: vw(52);
+        margin-right: vw(30);
+        @include mq(lg) {
+          margin-top:55px;
+          margin-right:31px;
+        }
+      }
+    }
+    &:nth-of-type(2){
+      @include mq(lg) {
+        background-image:url(#{$imgDir}bg-growth-env2-pc.svg)!important
+      }
+      .num{
+        margin-top: vw(54);
+        @include mq(lg) {
+          margin-top:55px;
+        }
+      }
+    }
+    &:nth-of-type(3){
+      @include mq(lg) {
+        background-image:url(#{$imgDir}bg-growth-env3-pc.svg)!important
+      }
+      .num{
+        // min-width:261px ;
+        margin-top: vw(52);
+        white-space: nowrap;
+        @include mq(lg) {
+          margin-top:55px;
+          margin-right:22px;
+        }
+      }
+    }
+    &:nth-of-type(4){
+      @include mq(lg) {
+        background-image:url(#{$imgDir}bg-growth-env4-pc.svg)!important
+      }
+      .num{
+        margin-top: vw(58);
+        margin-right: vw(16);
+        @include mq(lg) {
+          margin-top:54px;
+          margin-right:24px;
+        }
+      }
+    }
+    &:nth-of-type(5){
+      @include mq(lg) {
+        background-image:url(#{$imgDir}bg-growth-env5-pc.svg)!important
+      }
+      .num{
+        margin-top: vw(52);
+        margin-left: vw(8);
+        @include mq(lg) {
+          margin-top:55px;
+          margin-right:11px;
+        }
+      }
+    }
+    &:nth-of-type(6){
+      @include mq(lg) {
+        background-image:url(#{$imgDir}bg-growth-env6-pc.svg)!important
+      }
+      .num{
+        margin-top: vw(52);
+        margin-right: vw(22);
+        @include mq(lg) {
+          margin-top:55px;
+          margin-right:27px;
+        }
+      }
+    }
+    .num{
+      display: inline-block;
+      font-size: vw(128);
+      font-weight: normal;
+      color: $mainBlue;
+      letter-spacing: 0.05em;
+      @include bodoni-italic;
+      @include mq(lg) {
+        font-size:127px;
+      }
+    }
+  }
+}

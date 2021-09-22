@@ -1,0 +1,35 @@
+@use "../global" as *;
+
+// gsapによる自動生成エレメント
+.pin-spacer{
+  pointer-events: none;
+}
+
+.u-font-bold{
+  font-weight: bold;
+}
+
+source.u-position-top,
+img.u-position-top{
+  @include mq(xl) {
+    object-position: top;
+  }
+}
+
+source.u-position-bottom,
+img.u-position-bottom{
+  @include mq(xl) {
+    object-position: bottom;
+  }
+}
+
+
+// PC safari用
+html.safariPC{
+  .header-container{
+    background-color: #fff;
+  }
+  // div.juji-kanja img.obj-dot1{
+  //   width: 5px!important;
+  // }
+}

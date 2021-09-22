@@ -1,0 +1,169 @@
+@use "../global"as *;
+
+// ページ全体の慣性スクロール
+.smooth-scroll-container {
+  width: 100%;
+  // スクロールバー非表示
+  -ms-overflow-style: none; // IE, Edge
+  scrollbar-width: none; // Firefox
+  // locomotiveのブレイクポイントと連携（iPadの1024まではスクロールバー表示
+  @media screen and (min-width: 1025px) {
+    // overflow: hidden;
+    overflow-y: hidden !important;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// スクランブルテキスト
+.js-textScramble {
+  width: 0;
+  height: 0;
+}
+.scramble-symbol {
+  color: $mainBlue;
+  opacity: 0.5;
+}
+
+.js-showUp {
+  overflow: hidden;
+}
+
+.js-showUp > *{
+  display: block;
+  transition: transform $easeInOutSine 0.4s;
+  transform: translate3d(0,110%,0);
+}
+.js-showUp.is-show > *{
+  transform: translate3d(0,0,0);
+}
+
+
+// 一文字ずつ出現
+// .js-showEach {
+//   overflow: hidden;
+// }
+// .js-showEach span {
+//   display: inline-block;
+//   transform: translate3d(0,105%,0);
+// }
+// .js-showEach.is-show span{
+//   @for $i from 1 through 30 {
+//     &:nth-child(#{$i}) {
+//       animation: showUpEachText 0.6s $easeInOutSine #{$i * 0.1}s forwards;
+//     }
+//   }
+//   // animation: showUpEachText 0.4s $easeInOutSine forwards;
+// }
+// @keyframes showUpEachText {
+//   0% {
+//     transform: translate3d(0,105%,0);
+//   }
+//   50% {
+//     transform: translate3d(0,105%,0);
+//   }
+//   100% {
+//     transform: translate3d(0,0,0);
+//   }
+// }
+
+.js-fadeIn{
+  opacity: 0;
+  transition: transform 0.6s $easeOutCubic,opacity 0.6s $easeOutCubic;
+  transform: translate3d(0,10%,0);
+  &.is-show {
+    opacity: 1;
+    transition: transform 0.6s $easeOutCubic,opacity 0.6s $easeOutCubic;
+    transform: translate3d(0,0,0);
+  }
+}
+
+// .js-showEachBr span {
+//   display: inline-block;
+//   opacity: 0;
+// }
+
+// .js-showEachBr.is-show span {
+
+//   @for $i from 1 through 30 {
+//     &:nth-child(#{$i}) {
+//       animation: text 1s cubic-bezier(0.3, 0.72, 0.56, 0.99) #{$i * 0.1}s forwards;
+//     }
+//   }
+// }
+// dataページ数字シャッフル
+.js-shuffleText{
+  opacity: 0;
+  transition: opacity 0.2s $easeInCirc;
+  &.is-show{
+    opacity: 1;
+  }
+}
+
+@keyframes text {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,105%,0);
+  }
+  50% {
+    opacity: 0;
+    transform: translate3d(0,105%,0);
+  }
+  50.1% {
+    opacity: 1;
+    transform: translate3d(0,105%,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+// 左から右へ透明ボックスっぽく出現
+.js-showToRight {
+  overflow: hidden;
+  font-size: 16px;
+  text-align: center;
+  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1.4s .4s;
+  transform: translate3d(-100%, 0,0);
+  @include mq(tab-over) {
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1.4s .2s;
+  }
+}
+
+.js-showToRight span ,
+.js-showToRight picture,
+.js-showToRight img {
+  display: block;
+  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1.4s .4s;
+  transform: translate3d(100%, 0,0);
+  @include mq(tab-over) {
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1.4s .2s;
+  }
+}
+
+.js-showToRight.is-show,
+.js-showToRight.is-show span ,
+.js-showToRight.is-show picture,
+.js-showToRight.is-show img{
+  transform: translate3d(0, 0,0);
+}
+
+// 問題提起ページスクロールでシャッフルタイピング表示
+.js-shuffleScroll{
+  opacity: 0;
+  // display: none;
+  &.is-show{
+    opacity: 1;
+    // animation: widthToFull 1s linear forwards;
+  }
+}
+@keyframes widthToFull {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
